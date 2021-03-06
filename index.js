@@ -35,7 +35,7 @@ const grid = [
 
 const game = [];
 
-const createBoard = () => {
+const CreateBoard = () => {
     for (let i = 0; i < grid.length; i++) {
         const div = document.createElement("div");
         div.id = grid[i];
@@ -50,7 +50,7 @@ const createBoard = () => {
     }
 };
 
-createBoard();
+CreateBoard();
 
 const PlaySnake = (event) => {
     if (!event.detail || (event.detail == 1 && snakeStart === false)) {
@@ -105,7 +105,7 @@ const MoveUp = () => {
     Collision();
 };
 
-const moveDown = () => {
+const MoveDown = () => {
     Delete();
     currentPosition = 12;
     Create();
@@ -113,7 +113,7 @@ const moveDown = () => {
     Collision();
 };
 
-const moveRight = () => {
+const MoveRight = () => {
     Delete();
     currentPosition = 1;
     Create();
@@ -121,7 +121,7 @@ const moveRight = () => {
     Collision();
 };
 
-const moveLeft = () => {
+const MoveLeft = () => {
     Delete();
     currentPosition = -1;
     Create();
@@ -140,11 +140,11 @@ const Joystick = (e) => {
     if (e.keyCode === 87) {
         MoveUp();
     } else if (e.keyCode === 83) {
-        moveDown();
+        MoveDown();
     } else if (e.keyCode === 68) {
-        moveRight();
+        MoveRight();
     } else if (e.keyCode === 65) {
-        moveLeft();
+        MoveLeft();
     }
 };
 
